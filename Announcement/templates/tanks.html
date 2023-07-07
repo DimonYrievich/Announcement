@@ -1,0 +1,20 @@
+{% extends 'flatpages/default.html' %}
+
+{% block title %}
+<h1><span style="color: #ffffff;">TANKS</span></h1>
+{% endblock title %}
+
+{% block content %}
+    {% if tanks %}
+        {% for tank in tanks %}
+<p style="text-align: left;"><strong><span style="color: #000000;">___________________________________________________________________________________________________________________________</span></strong></p>
+        <p style="text-align: left;"><strong><span style="color: #000000;">{{ tank.title }}</span></strong></p>
+<p style="text-align: center;"><strong><span style="color: #000000;">{{ tank.content }}</span></strong></p>
+<p style="text-align: left;"><strong><span style="color: #000000;">{{ tank.text }}</span></strong></p>
+<p style="text-align: left;"><strong><span style="color: #000000;">{{ tank.time_in|date:'d.m.Y' }}&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Категория:&nbsp;{% for category in tank.category.all %}{{ category.name_category }}{% endfor %}&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Автор:&nbsp;{{ tank.author }}</span></strong></p>
+<p style="text-align: left;"><strong><span style="color: #000000;">___________________________________________________________________________________________________________________________</span></strong></p>
+        {% endfor %}
+            {% else %}
+                <h2>Объявлений нет!</h2>
+    {% endif %}
+{% endblock content %}

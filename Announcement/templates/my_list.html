@@ -1,0 +1,25 @@
+{% extends 'flatpages/default.html' %}
+
+{% block title %}
+<h1><span style="color: #ff0000;">MY ANNOUNCEMENTS</span></h1>
+{% endblock title %}
+
+{% block content %}
+    <form action="" method="get"><p style="text-align: center;"><span style="color: #ffffff;">Категория:</span> {{ filterset.form.category }}</p><p style="text-align: center;"><input style="background-color: #ff0000; color: #ffffff;" type="submit" value="Найти" /></p></form>
+    {% if myposts %}
+        {% for post in myposts %}
+<p style="text-align: left;"><strong><span style="color: #000000;">___________________________________________________________________________________________________________________________</span></strong></p>
+        <p style="text-align: left;"><strong><span style="color: #000000;">{{ post.title }}</span></strong></p>
+<p style="text-align: center;"><strong><span style="color: #000000;">{{ post.content }}</span></strong></p>
+<p style="text-align: left;"><strong><span style="color: #000000;">{{ post.text }}</span></strong></p>
+<p style="text-align: left;"><strong><span style="color: #000000;">{{ post.time_in|date:'d.m.Y' }}&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Категория:&nbsp;{% for category in post.category.all %}{{ category.name_category }}{% endfor %}&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Автор:&nbsp;{{ post.author }}</span></strong></p>
+<p style="text-align: left;"><strong><span style="color: #000000;">___________________________________________________________________________________________________________________________</span></strong></p>
+        {% endfor %}
+            {% else %}
+                <h2>Объявлений нет!</h2>
+    {% endif %}
+
+    <!-- Добавляем пагинацию на страницу  -->
+    <p> {% if page_obj.has_previous %} <span style="color: #ffffff;"> <a style="color: #ffffff;" href="?page=1"> 1 </a> </span> {% if page_obj.previous_page_number != 1 %} <span style="color: #ffffff;">...   <a style="color: #ffffff;" href="?page={{ page_obj.previous_page_number }}"> {{ page_obj.previous_page_number }} </a> </span> {% endif %}{% endif %} <span style="background-color: #ff0000; color: #ffffff;"> <strong> {{ page_obj.number }} </strong> </span> {% if page_obj.has_next %} <span style="color: #ffffff;"> <a style="color: #ffffff;" href="?page={{ page_obj.next_page_number }}"> {{ page_obj.next_page_number }} </a> </span> {% if paginator.num_pages != page_obj.next_page_number %} <span style="color: #ffffff;">...   <a style="color: #ffffff;" href="?page={{ page_obj.paginator.num_pages }}"> {{ page_obj.paginator.num_pages }} </a> </span> {% endif %}{% endif %} </p>
+
+{% endblock content %}

@@ -1,0 +1,14 @@
+{% extends 'flatpages/default.html' %}
+
+{% block title %}
+<h1><span style="color: #ff0000;">ANNOUNCEMENT</span></h1>
+{% endblock title %}
+
+{% block content %}
+<p style="text-align: left;"><strong><span style="color: #000000;">___________________________________________________________________________________________________________________________</span></strong></p>
+        <p style="text-align: left;"><strong><span style="color: #000000;">{{ post.title }}</span></strong></p>
+<p style="text-align: center;"><strong><span style="color: #000000;">{{ post.content }}</span></strong></p>
+<p style="text-align: left;"><strong><span style="color: #000000;">{{ post.text }}</span></strong></p>
+<p style="text-align: left;"><strong><span style="color: #000000;">{{ post.time_in|date:'d.m.Y' }}&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Категория:&nbsp;{% for category in post.category.all %}{{ category.name_category }}{% endfor %}&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Автор:&nbsp;{{ post.author }}</span></strong></p>
+<p style="text-align: left;"><strong><span style="color: #000000;">___________________________________________________________________________________________________________________________</span></strong></p>
+{% endblock content %}

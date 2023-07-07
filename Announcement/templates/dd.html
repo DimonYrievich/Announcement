@@ -1,0 +1,20 @@
+{% extends 'flatpages/default.html' %}
+
+{% block title %}
+<h1><span style="color: #ffffff;">DD</span></h1>
+{% endblock title %}
+
+{% block content %}
+    {% if dd %}
+        {% for dd in dd %}
+<p style="text-align: left;"><strong><span style="color: #000000;">___________________________________________________________________________________________________________________________</span></strong></p>
+        <p style="text-align: left;"><strong><span style="color: #000000;">{{ dd.title }}</span></strong></p>
+<p style="text-align: center;"><strong><span style="color: #000000;">{{ dd.content }}</span></strong></p>
+<p style="text-align: left;"><strong><span style="color: #000000;">{{ dd.text }}</span></strong></p>
+<p style="text-align: left;"><strong><span style="color: #000000;">{{ dd.time_in|date:'d.m.Y' }}&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Категория:&nbsp;{% for category in dd.category.all %}{{ category.name_category }}{% endfor %}&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Автор:&nbsp;{{ dd.author }}</span></strong></p>
+<p style="text-align: left;"><strong><span style="color: #000000;">___________________________________________________________________________________________________________________________</span></strong></p>
+        {% endfor %}
+            {% else %}
+                <h2>Объявлений нет!</h2>
+    {% endif %}
+{% endblock content %}

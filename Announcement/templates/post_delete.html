@@ -1,0 +1,13 @@
+{% extends 'flatpages/default.html' %}
+
+{% block title %}
+<h1><span style="color: #ffffff;">Удаление объявления</span></h1>
+{% endblock title %}
+
+{% block content %}
+<form action="" method="post">
+    {% csrf_token %}
+    <p style="text-align: center;">Удаляем{{ object.name }}?</p>
+    <p style="text-align: center;"><input style="background-color: #ff0000; color: #ffffff;" type="submit" value="Да, мля, удаляем!" /></p>
+</form>
+{% endblock content %}

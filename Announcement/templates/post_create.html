@@ -1,0 +1,54 @@
+{% extends 'flatpages/default.html' %}
+
+{% block title %}
+<h1><span style="color: #ffffff;">Создание объявления</span></h1>
+{% endblock title %}
+
+{% block content %}
+<form action="" method="post">{% csrf_token %}<div class="form-group"><label for="{{ form.title.id_for_label }}">Заголовок:</label>{{ form.title }} {% if form.title.errors %}<div class="errors">{% for error in form.title.errors %}<p>{{ error }}</p>{% endfor %}</div>{% endif %}</div>
+  <div class="form-group"><label for="{{ form.text.id_for_label }}">Описание:</label>{{ form.text }} {% if form.text.errors %}<div class="errors">{% for error in form.text.errors %}<p>{{ error }}</p>{% endfor %}</div>{% endif %}</div>
+  <div class="form-group"><label for="{{ form.content.id_for_label }}">Содержание:</label>{{ form.content }} {% if form.content.errors %}<div class="errors">{% for error in form.content.errors %}<p>{{ error }}</p>{% endfor %}</div>{% endif %}</div>
+  <div class="form-group"><label for="{{ form.author.id_for_label }}">Автор:</label>{{ form.author }} {% if form.author.errors %}<div class="errors">{% for error in form.author.errors %}<p>{{ error }}</p>{% endfor %}</div>{% endif %}</div>
+  <div class="form-group"><label for="{{ form.category.id_for_label }}">Категория:</label>{{ form.category }} {% if form.category.errors %}<div class="errors">{% for error in form.category.errors %}<p>{{ error }}</p>{% endfor %}</div>{% endif %}</div>
+  <input style="background-color: #ff0000; color: #ffffff;" type="submit" value="Сохранить" />
+</form>
+{% endblock content %}
+
+
+<!--<form action="" method="post">-->
+<!--    {% csrf_token %}-->
+<!--    {{ form.as_p }}-->
+<!--    <input style="background-color: #ff0000; color: #ffffff;" type="submit" value="Сохранить" />-->
+<!--</form>-->
+
+
+
+<!--<form action="" method="post">{% csrf_token %}<div class="form-group"><label for="{{ form.title.id_for_label }}">Заголовок:</label>{{ form.title }} {% if form.title.errors %}<div class="errors">{% for error in form.title.errors %}<p>{{ error }}</p>{% endfor %}</div>{% endif %}</div>-->
+<!--  <div class="form-group"><label for="{{ form.text.id_for_label }}">Описание:</label>{{ form.text }} {% if form.text.errors %}<div class="errors">{% for error in form.text.errors %}<p>{{ error }}</p>{% endfor %}</div>{% endif %}</div>-->
+<!--  <div class="form-group"><label for="{{ form.content.id_for_label }}">Содержание:</label>{{ form.content }} {% if form.content.errors %}<div class="errors">{% for error in form.content.errors %}<p>{{ error }}</p>{% endfor %}</div>{% endif %}</div>-->
+<!--  <div class="form-group"><label for="{{ form.author.id_for_label }}">Автор:</label>{{ form.author }} {% if form.author.errors %}<div class="errors">{% for error in form.author.errors %}<p>{{ error }}</p>{% endfor %}</div>{% endif %}</div>-->
+<!--  <div class="form-group"><label for="{{ form.category.id_for_label }}">Категория:</label>{{ form.category }} {% if form.category.errors %}<div class="errors">{% for error in form.category.errors %}<p>{{ error }}</p>{% endfor %}</div>{% endif %}</div>-->
+<!--  <input style="background-color: #ff0000; color: #ffffff;" type="submit" value="Сохранить" />-->
+<!--</form>-->
+
+
+
+<!--<form action="" method="post">{% csrf_token %}-->
+<!--  <label for="{{ form.title.id_for_label }}"</label><p style="text-align: left;"><span style="color: #ffffff;">Заголовок:</span>&nbsp;{{ form.title }}</p>-->
+<!--  <label for="{{ form.text.id_for_label }}"></label><p style="text-align: left;"><span style="color: #ffffff;">Описание: </span>&nbsp;{{ form.text }}</p>-->
+<!--  <label for="{{ form.content.id_for_label }}"></label><p style="text-align: left;"><span style="color: #ffffff;">Контент: </span>&nbsp;{{ form.content }}</p>-->
+<!--  <label for="{{ form.author.id_for_label }}"></label><p style="text-align: left;"><span style="color: #ffffff;">Автор:    </span>&nbsp;{{ form.author }}</p>-->
+<!--  <label for="{{ form.category.id_for_label }}"></label><p style="text-align: left;"><span style="color: #ffffff;">Категория:</span>&nbsp;{{ form.category }}</p>-->
+<!--  <input style="background-color: #ff0000; color: #ffffff;" type="submit" value="Сохранить" />-->
+<!--</form>-->
+
+
+
+<!--<form action="" method="post">{% csrf_token %}-->
+<!--<label for="{{ form.title.id_for_label }}"</label><p style="text-align: left;"><span style="color: #ffffff;">Заголовок:</span>&nbsp;{{ form.title }}</p>-->
+<!--<label for="{{ form.text.id_for_label }}"></label><p style="text-align: left;"><span style="color: #ffffff;">Описание: </span>&nbsp;{{ form.text }}</p>-->
+<!--<label for="{{ form.content.id_for_label }}"></label><p style="text-align: left;"><span style="color: #ffffff;">Контент: </span>&nbsp;{{ form.content }}</p>-->
+<!--<label for="{{ form.author.id_for_label }}"></label><p style="text-align: left;"><span style="color: #ffffff;">Автор:    </span>&nbsp;{{ form.author }}</p>-->
+<!--<label for="{{ form.category.id_for_label }}"></label><p style="text-align: left;"><span style="color: #ffffff;">Категория:</span>&nbsp;{{ form.category }}</p>-->
+<!--<input style="background-color: #ff0000; color: #ffffff;" type="submit" value="Сохранить" />-->
+<!--</form>-->

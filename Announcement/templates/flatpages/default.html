@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <!-- Favicon-->
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
+
+        {% load static %}
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="{% static 'css/styles.css' %}" rel="stylesheet" />
+    </head>
+    <body id="page-top">
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
+            <div class="container"style="text-align: left;">
+                <a class="navbar-brand" href="/board/"><span style="color: #ff0000;"><strong>RPG</strong></span></a>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item mx-0 mx-lg-1"style="text-align: center;"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="/board/tanks/"><span style="color: #ffffff;">TANKS</span></a></li>
+                        <li class="nav-item mx-0 mx-lg-1"style="text-align: center;"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="/board/hills/"><span style="color: #ffffff;">HILLS</span></a></li>
+                        <li class="nav-item mx-0 mx-lg-1"style="text-align: center;"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="/board/dd/"><span style="color: #ffffff;">DD</span></a></li>
+                        <li class="nav-item mx-0 mx-lg-1"style="text-align: center;"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="/board/tradesmen/"><span style="color: #ffffff;">TRADESMEN</span></a></li>
+                        <li class="nav-item mx-0 mx-lg-1"style="text-align: center;"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="/board/guildmasters/"><span style="color: #ffffff;">GUILDMASTERS</span></a></li>
+                        <li class="nav-item mx-0 mx-lg-1"style="text-align: center;"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="/board/questgivers/"><span style="color: #ffffff;">QUESTGIVERS</span></a></li>
+                        <li class="nav-item mx-0 mx-lg-1"style="text-align: center;"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="/board/blacksmiths/"><span style="color: #ffffff;">BLACKSMITHS</span></a></li>
+                        <li class="nav-item mx-0 mx-lg-1"style="text-align: center;"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="/board/tanners/"><span style="color: #ffffff;">TANNERS</span></a></li>
+                        <li class="nav-item mx-0 mx-lg-1"style="text-align: center;"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="/board/potionmakers/"><span style="color: #ffffff;">POTIONMAKERS</span></a></li>
+                        <li class="nav-item mx-0 mx-lg-1"style="text-align: center;"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="/board/spellmasters/"><span style="color: #ffffff;">SPELLMASTERS</span></a></li>
+                        <li class="nav-item mx-0 mx-lg-1"style="text-align: center;"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="/board/I/"><span style="color: #ff0000;"><strong>I</strong></span></a></li>
+                        <li class="nav-item mx-0 mx-lg-1"style="text-align: center;"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="/contacts/"><span style="color: #ff0000;"><strong>CONTACTS</strong></span></a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Masthead-->
+        <header class="masthead bg-primary text-white text-center">
+            <div class="container d-flex align-items-center flex-column">
+                <!-- Masthead Avatar Image-->
+                <img class="masthead-avatar mb-5" src="assets/img/avataaars.svg" alt="..." />
+                <p>&nbsp;</p>
+                <!-- Заголовок страницы и её содержание-->
+                    {% block title %}
+                        <!--   -->
+                    {% endblock title %}
+                <p>____________________________________________________________________________________________________________________________________________<p>
+                <p>____________________________________________________________________________________________</p>
+                <pre>
+                    {% block content %}
+                        <!--   -->
+                    {% endblock content %}
+                </pre>
+            </div>
+        </header>
+        <!-- Footer-->
+        <footer class="footer text-center">
+            <div class="container">
+            </div>
+        </footer>
+    </body>
+</html>
